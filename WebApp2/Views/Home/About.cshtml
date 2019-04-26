@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="div1">
+        JS面向对象
+        <p id="p1"> </p>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var currDate = new Date();
+            $('#p1').text(currDate.getHours() + ":" + currDate.getMinutes() + ":" + currDate.getSeconds());
+        }
+        // 建立MyFunc对象
+        function MyFunc(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        MyFunc.prototype.showName = function () {
+            console.log("姓名："+this.name);
+        }
+        MyFunc.prototype.showAge = function () {
+            console.log("年龄" + this.age);
+        }
+
+        MyFunc fun1 = new MyFunc("小王", 12);
+        MyFunc fun2 = new MyFunc("小李", 13);
+        fun1.showName();
+        fun1.showAge();
+    </script>
+</body>
+</html>

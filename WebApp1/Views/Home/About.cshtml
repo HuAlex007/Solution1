@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div id="div1">
+        JS面向对象
+        <p id="p1"> </p>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () {
+            var currDate = new Date();
+            $('#p1').text(currDate.getHours() + ":" + currDate.getMinutes() + ":" + currDate.getSeconds());
+        }
+        // 建立MyFunc对象
+        function MyFunc(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        MyFunc.prototype.showName = function () {
+            console.log("姓名：" + this.name);
+        }
+        MyFunc.prototype.showAge = function () {
+            console.log("年龄：" + this.age);
+        }
+
+        var fun1 = new MyFunc("小王", 12);
+        var fun2 = new MyFunc("小李", 13);
+        fun1.showName();
+        fun1.showAge();
+        //alert(fun1.showName === fun2.showName);
+        fun2.showName();
+        fun2.showAge();
+        Array.prototype.getSum = function () {
+            var num = 0;
+            for (var i = 0; i < this.length; i++) {
+                num += this[i];
+            }
+            return num;
+        }
+        var arr1 = [1, 2, 3];
+        var res = arr1.getSum();
+        console.log(res);
+
+        var str = "she is a dog";
+        console.log(str)
+        var arr2 = str.split(' ');
+        console.log(arr2);
+        arr2 = arr2.reverse();
+        console.log(arr2);
+        var str2 = arr2.join(' ');
+        console.log(str2)
+    </script>
+</body>
+</html>
