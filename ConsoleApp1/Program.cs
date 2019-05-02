@@ -9,7 +9,7 @@ namespace ConsoleApp1
             string str = Console.ReadLine();
             ShowName("输入："+ str);
             Console.ReadKey();
-            Console.WriteLine("Hello World 123456789!");
+            Console.WriteLine("Hello World 12345678910!");
             Console.ReadKey();
         }
         public static void ShowName(string name) {
